@@ -1,0 +1,38 @@
+name: Deploy DAG to Astronomer
+
+on:
+  push:
+    branches:
+      - main  # Triggers the workflow on pushes to the 'main' branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      # Step 3: Install Astronomer CLI
+      - name: Install Astronomer CLI
+        run: |
+          curl -sSL https://install.astronomer.io | sudo bash
+
+      # Step 4: Authenticate with Astronomer
+      - name: Authenticate Astronomer
+        env:
+          ASTRONOMER_API_KEY: ${{ secrets.ASTRONOMER_API_KEY }}
+        run: |
+          astro auth login <your-astronomer-domain> --token $ASTRONOMER_API_KEY
+
+      # Step 5: Deploy to Astronomer
+      - name: Deploy to Astronomer
+        run: |
+          astro deploy

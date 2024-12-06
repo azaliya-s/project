@@ -1,0 +1,11 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: bitcoin-438011
+      dataset: bitcoin_data
+      threads: 4
+      keyfile: /Users/kidrauhl/Downloads/bitcoin-438011-8f3790edfbef.json
+      priority: interactive

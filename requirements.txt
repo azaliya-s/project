@@ -1,0 +1,3 @@
+apache-airflow
+astronomer-providers
+dbt-bigquery
