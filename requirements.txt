@@ -1,3 +1,5 @@
 apache-airflow
-astronomer-providers
+apache-airflow-providers-google
+requests
+google-cloud-bigquery
 dbt-bigquery
