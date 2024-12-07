@@ -55,8 +55,8 @@ with DAG(
         return transformed_data
 
     def load_data_to_bigquery(data):
-        client = bigquery.Client(project=PROJECT_ID)
-        dataset_ref = client.dataset(DATASET_ID)
+        client = bigquery.Client(project= 'bitcoin-438011')
+        dataset_ref = client.dataset('bitcoin-438011.raw_dataset')
         table_ref = dataset_ref.table(TABLE_ID)
 
         # Define the schema of the raw table
