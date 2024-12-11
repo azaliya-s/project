@@ -25,14 +25,16 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      # Step 4: Run DBT models
+      # Step 4: Deploy DAG
+      - name: Deploy Airflow DAG
+        run: |
+          cd dags
+          astro deploy
+
+      # Step 5: Run DBT models
       - name: Run DBT models
         run: |
           cd dbt
           dbt run
 
-      # Step 5: Deploy DAG
-      - name: Deploy Airflow DAG
-        run: |
-          cd dags
-          astro deploy
+      
