@@ -1,4 +1,4 @@
 apache-airflow-providers-google==6.1.0
 requests==2.25.1
-google-cloud-bigquery==3.0.0
+google-cloud-bigquery>=1.25.0,<3.0.0
 dbt-bigquery==1.0.0
