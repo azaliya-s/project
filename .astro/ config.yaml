@@ -1,0 +1,4 @@
+project:
+  name: bitcoin_data_pipeline
+airflow:
+  image: quay.io/astronomer/ap-airflow:2.7.2
